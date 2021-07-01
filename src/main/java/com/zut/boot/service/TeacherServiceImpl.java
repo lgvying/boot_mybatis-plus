@@ -82,10 +82,10 @@ public class TeacherServiceImpl implements TeacherService{
      * @return
      */
     @Override
-    public ResponseVo<Page<Teacher>> getFenYe(Integer pageNumber,Integer pageSize) {
-        Page<Teacher> page=new Page<>(pageNumber,pageSize);
+    public ResponseVo<Page<Teacher>> getFenYe(Integer pageNumber) {
+        Page<Teacher> page=new Page<>(pageNumber,5);
         teacherMapper.selectPage(page, null);
-        return new ResponseVo<>("获取第"+pageNumber+"页，"+pageSize+"条数据成功",200,page);
+        return new ResponseVo<>("获取第"+pageNumber+"页，"+5+"条数据成功",200,page);
     }
     /**
      * 根据性别或者创建时间在如期之后查询，并且按更新时间降序排序

@@ -19,6 +19,6 @@ public interface TeacherService {
     ResponseVo<String> updateOne(Teacher teacher);
     ResponseVo<Teacher> getOneByTid(Integer tid);
     ResponseVo<List<Teacher>> getAll();
-    ResponseVo<Page<Teacher>> getFenYe(Integer pageNumber, Integer pageSize);
+    ResponseVo<Page<Teacher>> getFenYe(Integer pageNumber);
     ResponseVo<List<Teacher>> getListByTJ(String  tsex, Date time,Date time2);
 }

@@ -1,6 +1,7 @@
 package com.zut.boot.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zut.boot.pojo.Teacher;
 import com.zut.boot.service.TeacherService;
 import com.zut.boot.vo.ResponseVo;
@@ -76,9 +77,9 @@ public class TeacherConterller {
      * @return
      */
     @RequestMapping(value = "/getFenYe/{pageNumber}/{pageSize}",method = RequestMethod.GET)
-    public ResponseVo<IPage<Teacher>> getFenYe(@PathVariable("pageNumber")Integer pageNumber,
-                                               @PathVariable("pageSize")Integer pageSize){
-        return teacherService.getFenYe(pageNumber,pageSize);
+    public ResponseVo<Page<Teacher>> getFenYe(@PathVariable("pageNumber")Integer pageNumber,
+                                              @PathVariable("pageSize")Integer pageSize){
+        return teacherService.getFenYe(pageNumber);
     }
 
     /**
